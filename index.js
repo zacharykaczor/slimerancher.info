@@ -5,9 +5,6 @@ const information = document.querySelector("#selected");
 const mapTexture = new Image();
 mapTexture.src = "map.png";
 
-const markerTexture = new Image();
-markerTexture.src = "marker.png";
-
 const podTexture = new Image();
 podTexture.src = "pod.png";
 
@@ -115,7 +112,7 @@ canvas.addEventListener("mousedown", function(event) {
     var worldPosition = toWorld(event.clientX, event.clientY);
 
     for (let marker of markers) {
-        if (distance(worldPosition, marker) < 10 / scale) {
+        if (distance(worldPosition, marker) < 50 / 2 / scale) {
             information.innerHTML = `<b>${marker.reward}</b><br><p>${marker.notes}</p>`;
             break;
         }
