@@ -8,6 +8,9 @@ mapTexture.src = "map.png";
 const markerTexture = new Image();
 markerTexture.src = "marker.png";
 
+const podTexture = new Image();
+podTexture.src = "pod.png";
+
 import markers from "./markers.js";
 
 var origin = {
@@ -41,16 +44,20 @@ function render() {
     
 
     for (let marker of markers) {
-        ctx.font = `bold ${ 25 / scale }px serif`;
-        ctx.fillText(marker.reward, marker.x + 10 / scale, marker.y - 10 / scale);
+        let markerSize = 50 / scale;
 
-        ctx.beginPath();
-        
-        ctx.arc(marker.x, marker.y, 10 / scale, 0, 2 * Math.PI);
+        ctx.drawImage(
+            podTexture, 
+            marker.x - (markerSize / 2), 
+            marker.y - (markerSize / 2), 
+            markerSize, 
+            markerSize
+        );
 
-        ctx.fill();
+        ctx.font = `bold ${ 25 / scale }px monospace`;
+        ctx.textBaseline = 'middle';
+        ctx.fillText(marker.reward, marker.x + markerSize / 1.5, marker.y);
     }
-
 }
 
 function resize() {
