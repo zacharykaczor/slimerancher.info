@@ -65,19 +65,28 @@ function resize() {
 
 window.addEventListener("load", resize);
 window.addEventListener("resize", resize);
+function scaleAt(x, y, scaleBy) {
+    origin.x = x - (x - origin.x) * scaleBy;
+    origin.y = y - (y - origin.y) * scaleBy;
+    scale *= scaleBy;
+}
+
 window.addEventListener("wheel", function(event) {
     var scaleBy = 1.2;
 
-    if (event.deltaY > 0) {
-        scaleBy = 1 / scaleBy;
+    if (event.deltaY < 0 && scale < 4) {
+        scaleAt(event.clientX, event.clientY, scaleBy);
     }
 
-    if (scale * scaleBy > canvas.width / mapTexture.width) {
-        origin.x = event.clientX - (event.clientX - origin.x) * scaleBy;
-        origin.y = event.clientY - (event.clientY - origin.y) * scaleBy;
-        scale *= scaleBy;
-    } else {
-        scale = canvas.width / mapTexture.width;
+    if (event.deltaY > 0) {
+        let minimumScale = canvas.width / mapTexture.width;
+        scaleBy = 1 / scaleBy;
+
+        if (scale * scaleBy < minimumScale) {
+            scale = minimumScale;
+        } else {
+            scaleAt(event.clientX, event.clientY, scaleBy)
+        }
     }
 
     render();
