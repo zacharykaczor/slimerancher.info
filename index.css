@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    background: cornflowerblue;
+}
+
+#selected {
+    position: fixed;
+    background: #eee;
+    padding: 2em;
+    margin: 2em;
+    font-size: 2em;
+    user-select: none;
+    pointer-events: none;
+}
+
+#selected p {
+    margin-bottom: 0;
+}
