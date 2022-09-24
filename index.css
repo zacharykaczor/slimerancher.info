@@ -17,8 +17,9 @@ canvas {
     font-size: 2em;
     user-select: none;
     pointer-events: none;
+    font-family: consolas;
 }
 
 #selected p {
-    margin-bottom: 0;
+    margin: 0;
 }

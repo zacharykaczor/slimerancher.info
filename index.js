@@ -15,6 +15,12 @@ var origin = {
     y: 0
 }
 
+var mouse = {
+    visible: false,
+    x: 0,
+    y: 0
+}
+
 var panning = false;
 var scale = 1;
 
@@ -38,7 +44,6 @@ function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.setTransform(scale, 0, 0, scale, origin.x, origin.y);
     ctx.drawImage(mapTexture, 0, 0);
-    
 
     for (let marker of markers) {
         let markerSize = 50 / scale;
@@ -52,8 +57,20 @@ function render() {
         );
 
         ctx.font = `bold ${ 25 / scale }px monospace`;
-        ctx.textBaseline = 'middle';
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "left";
         ctx.fillText(marker.reward, marker.x + markerSize / 1.5, marker.y);
+    }
+
+    if (mouse.visible) {
+        let mouseInWorld = toWorld(mouse.x, mouse.y);
+
+        mouseInWorld.x = Math.round(mouseInWorld.x);
+        mouseInWorld.y = Math.round(mouseInWorld.y);
+    
+        ctx.textAlign = "right";
+        ctx.textBaseline = "top";
+        ctx.fillText(mouseInWorld.x + " " + mouseInWorld.y, mouseInWorld.x - 10, mouseInWorld.y)
     }
 }
 
@@ -122,7 +139,17 @@ canvas.addEventListener("mousedown", function(event) {
 
     for (let marker of markers) {
         if (distance(worldPosition, marker) < 50 / 2 / scale) {
-            information.innerHTML = `<b>${marker.reward}</b><br><p>${marker.notes}</p>`;
+            information.innerHTML = `
+                <b>${marker.reward}</b>
+                <br>
+                <p>${marker.notes}</p>
+                <br>
+                <p>
+                    X: ${marker.x}
+                    <br>
+                    Y: ${marker.y}
+                </p>
+            `;
             break;
         }
     }
@@ -134,6 +161,9 @@ canvas.addEventListener("mousemove", function(event) {
         origin.y += event.movementY;
     }
 
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+
     render();
 })
 
@@ -141,6 +171,13 @@ canvas.addEventListener("mouseup", function(event) {
     panning = false;
 });
 
+canvas.addEventListener("mouseenter", function(event) {
+    mouse.visible = true;
+    render();
+});
+
 canvas.addEventListener("mouseleave", function(event) {
     panning = false;
-});
+    mouse.visible = false;
+    render();
+});;
