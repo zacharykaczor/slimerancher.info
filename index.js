@@ -16,6 +16,7 @@ var origin = {
 }
 
 var mouse = {
+    latestDown: null,
     visible: false,
     x: 0,
     y: 0
@@ -133,26 +134,8 @@ function distance(p1, p2) {
 }
 
 canvas.addEventListener("mousedown", function(event) {
+    mouse.latestDown = event;
     panning = true;
-    
-    var worldPosition = toWorld(event.clientX, event.clientY);
-
-    for (let marker of markers) {
-        if (distance(worldPosition, marker) < 50 / 2 / scale) {
-            information.innerHTML = `
-                <b>${marker.reward}</b>
-                <br>
-                <p>${marker.notes}</p>
-                <br>
-                <p>
-                    X: ${marker.x}
-                    <br>
-                    Y: ${marker.y}
-                </p>
-            `;
-            break;
-        }
-    }
 })
 
 canvas.addEventListener("mousemove", function(event) {
@@ -168,6 +151,38 @@ canvas.addEventListener("mousemove", function(event) {
 })
 
 canvas.addEventListener("mouseup", function(event) {
+    if (mouse.latestDown && 
+        event.clientX == mouse.latestDown.clientX &&
+        event.clientY == mouse.latestDown.clientY) 
+    {
+        var worldPosition = toWorld(event.clientX, event.clientY);
+        var clickedPod = false;
+    
+        for (let marker of markers) {
+            if (distance(worldPosition, marker) < 50 / 2 / scale) {
+                information.classList.remove("hidden")
+                information.innerHTML = `
+                    <b>${marker.reward}</b>
+                    <br>
+                    <p>${marker.notes}</p>
+                    <br>
+                    <p>
+                        X: ${marker.x}
+                        <br>
+                        Y: ${marker.y}
+                    </p>
+                `;
+    
+                clickedPod = true;
+                break;
+            }
+        }
+    
+        if (!clickedPod) {
+            information.classList.add("hidden")
+        }
+    }
+
     panning = false;
 });
 

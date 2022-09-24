@@ -20,6 +20,10 @@ canvas {
     font-family: consolas;
 }
 
+.hidden {
+    display: none;
+}
+
 #selected p {
     margin: 0;
 }
