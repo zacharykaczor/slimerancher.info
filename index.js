@@ -1,4 +1,5 @@
-const modal = document.querySelector("#information");
+const information = document.querySelector("#information");
+const coordinates = document.querySelector("#coordinates");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -153,7 +154,10 @@ canvas.addEventListener("mousedown", function() {
     startPanning();
 });
 
-canvas.addEventListener("mouseleave", stopPanning);
+canvas.addEventListener("mouseleave", function() {
+    coordinates.classList.add("hidden");
+    stopPanning();
+});
 canvas.addEventListener("mouseup", stopPanning);
 
 canvas.addEventListener("wheel", function(event) {
@@ -216,7 +220,6 @@ canvas.addEventListener("click", function(event) {
         }
 
         information.style.left = (markerOnScreen.x - information.clientWidth / 2) + "px";
-
     }
 });
 
@@ -225,4 +228,8 @@ canvas.addEventListener("mousemove", function(event) {
         camera.position.x += event.movementX;
         camera.position.y += event.movementY;
     }
+
+    let worldMouse = toWorld(event.clientX, event.clientY)
+    coordinates.classList.remove("hidden");
+    coordinates.textContent = `X: ${Math.round(worldMouse.x)} Y: ${Math.round(worldMouse.y)}`
 });

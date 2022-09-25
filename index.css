@@ -34,13 +34,17 @@ main {
     overflow: hidden;
 }
 
-#information {
+#information, #coordinates {
     position: fixed;
     background: white;
     padding: 0 1em;
     user-select: none;
     pointer-events: none;
     font-family: consolas;
+}
+
+#coordinates {
+    padding: 1em;
 }
 
 canvas {
