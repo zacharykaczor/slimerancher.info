@@ -21,12 +21,12 @@ footer ul {
     padding: 0;
 }
 
-footer a {
+a {
     color: blue;
     text-decoration: none;
 }
 
-footer a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -56,4 +56,8 @@ canvas {
 
 .hidden {
     display: none;
+}
+
+#information a {
+    pointer-events: all;
 }

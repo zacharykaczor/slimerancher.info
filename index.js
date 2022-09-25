@@ -200,6 +200,8 @@ canvas.addEventListener("click", function(event) {
 
         <p>
             ${clickedMarker.notes}
+            <br>
+            <a href=${clickedMarker.screenshot}>Screenshot</a>
         </p>
 
         <p>
