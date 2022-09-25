@@ -1,29 +1,55 @@
 body {
     margin: 0;
+
+    display: grid;
+
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+footer {
+    font-family: consolas;
+    padding: 0 1em;
+    display: flex;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer a {
+    color: blue;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+main {
     overflow: hidden;
 }
 
-canvas {
-    width: 100vw;
-    height: 100vh;
-    background: cornflowerblue;
-}
-
-#selected {
+#information {
     position: fixed;
-    background: #eee;
-    padding: 2em;
-    margin: 2em;
-    font-size: 2em;
+    background: white;
+    padding: 0 1em;
     user-select: none;
     pointer-events: none;
     font-family: consolas;
 }
 
-.hidden {
-    display: none;
+canvas {
+    width: 100%;
+    height: 100%;
+
+    background: cornflowerblue;
 }
 
-#selected p {
-    margin: 0;
+.hidden {
+    display: none;
 }
