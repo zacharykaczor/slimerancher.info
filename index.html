@@ -8,41 +8,69 @@
     <title>Slime Rancher 2 Map</title>
 
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="pod.webp" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="pod.png">
 </head>
 
 <body>
     <main>
-        <div id="information"></div>
+        <div id="credits-modal" class="hidden">
+            <div id="credits">
+                <a href="https://docs.google.com/spreadsheets/d/1wvXhFJXMrcBV5FAH9dv-m1Z3NO-sY-Qrys3N2_VH7yM">Treasure Pod locations</a>
+                compiled by Emerald
+
+                <br>
+
+                <a href="https://docs.google.com/spreadsheets/d/1wZYM5p89hNIkrqm3sWse8Wu5bPgG9Bzm8u3MMQzcotE">Research Drone locations</a>
+                compiled by SylviaCrisp
+
+                <br>
+                <br>
+
+                Thanks to:
+                <ul>
+                    <li>Physo</li>
+                    <li>McCallaghan</li>
+                    <li>Epokk</li>
+                    <li>Zebu Bull</li>
+                </ul>
+                for helping find these locations!
+                
+                <br>
+                <br>
+
+                <a href="https://www.slimerancher.info/">slimerancher.info</a>
+                developed by Zachary
+
+                <br>
+
+                <a href="https://www.slimerancher.com/">Slime Rancher 2</a>
+                created by
+                <a href="http://www.monomipark.com/">Monomi Park</a>
+
+                <button id="hide-credits-button">Hide Credits</button>
+            </div>
+        </div>
+
+        <div id="information" class="hidden"></div>
         <div id="coordinates" class="hidden"></div>
 
         <canvas></canvas>
     </main>
 
     <footer>
-        <ul>
-            <li>
-                <a href="https://docs.google.com/spreadsheets/d/1wvXhFJXMrcBV5FAH9dv-m1Z3NO-sY-Qrys3N2_VH7yM">Treasure Pod locations</a>
-                provided by Emerald, SylviaCrisp, and MrCallaghan
-            </li>
+        <button id="show-credits-button" type="button">
+            Show Credits
+        </button>
 
-            <li>
-                Emerald also ripped the map texture and pod icons
-            </li>
+        <button id="treasure-pods-button" type="button">
+            <span>Test</span>
+            Treasure Pods
+        </button>
 
-            <br>
-            <li>
-                <a href="https://www.slimerancher.com/">Slime Rancher 2</a>
-                <span> created by </span>
-                <a href="http://www.monomipark.com/">Monomi Park</a>
-            </li>
-
-            <li>
-                This website
-                <span> developed by </span>
-                Zachary
-            </li>
-        </ul>
+        <button id="research-drones-button" type="button">
+            <span>Test</span>
+            Research Drones
+        </button>
     </footer>
     
     <script src="index.js" type="module"></script>

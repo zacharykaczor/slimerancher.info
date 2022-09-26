@@ -11,14 +11,11 @@ body {
 }
 
 footer {
-    font-family: consolas;
-    padding: 0 1em;
     display: flex;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
+    flex-direction: row;
+    font-family: consolas;
+    padding: 1em;
+    gap: 1em;
 }
 
 a {
@@ -54,10 +51,53 @@ canvas {
     background: cornflowerblue;
 }
 
-.hidden {
-    display: none;
+#credits-modal {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.25); 
+    /* display: flex; */
+
+    justify-content: center;
+    align-items: center;
 }
 
+#credits-modal:not(.hidden) {
+    display: flex;
+}
+
+#credits {
+    background: white;
+    padding: 2em;
+    font-size: 1.2em;
+    font-family: consolas;
+}
+
+#hide-credits-button {
+    width: 100%;
+    margin-top: 1em;
+}
+
+button {
+    padding: 0.5em 0.75em;
+    background: black;
+    color: white;
+    border: none;
+    font-family: consolas;
+    font-size: 1.15em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ddd;
+    color: black;
+}
 #information a {
     pointer-events: all;
+}
+
+.hidden {
+    display: none;
 }
