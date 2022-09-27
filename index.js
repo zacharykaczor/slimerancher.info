@@ -13,6 +13,7 @@ var showResearchDrones = true;
 showCreditsButton.addEventListener("click", function() {
     creditsModal.classList.remove("hidden");
     footer.classList.add("hidden")
+    hideModal();
 });
 
 hideCreditsButton.addEventListener("click", function() {
@@ -250,6 +251,7 @@ canvas.addEventListener("mouseleave", function() {
     coordinates.classList.add("hidden");
     stopPanning();
 });
+
 canvas.addEventListener("mouseup", stopPanning);
 
 canvas.addEventListener("wheel", function(event) {

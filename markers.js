@@ -518,7 +518,7 @@ export const researchDrones = [
         y: 2823,
         name: "Ember Valley 5 - Cave Hub",
         notes: "In the south of the Boom, Crystal, & Batty caves",
-        screenshot: "https://cdn.discordapp.com/attachments/1024026637941080094/1024031564222431282/unknown.png"
+        screenshot: "https://cdn.discordapp.com/attachments/1024026637941080094/1024031965571190824/unknown.png"
     },
     { 
         x: 3057, 
