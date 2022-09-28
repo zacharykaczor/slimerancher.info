@@ -140,7 +140,7 @@ class Camera {
         if (this.zoom / this.zoomFactor > this.minZoom) {
             this.zoomAt(at, 1 / this.zoomFactor);
         } else {
-            this.zoom = this.minZoom;
+            this.zoomAt(at, this.minZoom / this.zoom);
         }
     }
 }
@@ -273,6 +273,10 @@ canvas.addEventListener("wheel", function(event) {
     if (event.deltaY > 0) {
         camera.zoomOut(at);
     }
+
+    let worldMouse = toWorld(event.clientX, event.clientY)
+    coordinates.classList.remove("hidden");
+    coordinates.textContent = `X: ${Math.round(worldMouse.x)} Y: ${Math.round(worldMouse.y)}`
 }, { passive: true });
 
 function getMarkerAtCursor(mousePosition) {
