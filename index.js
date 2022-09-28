@@ -1,4 +1,5 @@
-import { treasurePods, researchDrones } from "./markers.js";
+var treasurePods;
+var researchDrones;
 
 const creditsModal = document.querySelector("#credits-modal");
 const footer = document.querySelector("footer");
@@ -44,13 +45,13 @@ researchDronesButton.addEventListener("click", function() {
 updateResearchDronesButton();
 
 const mapImage = new Image();
-mapImage.src = "./map.webp";
+mapImage.src = "./textures/map.webp";
 
 const podImage = new Image();
-podImage.src = "./pod.webp";
+podImage.src = "./textures/pod.webp";
 
 const droneImage = new Image();
-droneImage.src = "./drone.png";
+droneImage.src = "./textures/drone.webp";
 
 var mapTexture = null;
 var podTexture = null;
@@ -196,8 +197,6 @@ function render() {
     camera.position.x = clamp(three.x, camera.position.x, 0);
     camera.position.y = clamp(three.y, camera.position.y, 0);
 
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.setTransform(camera.zoom, 0, 0, camera.zoom, camera.position.x, camera.position.y);
     ctx.drawImage(mapTexture, 0, 0);
 
@@ -228,6 +227,12 @@ async function load() {
     mapTexture = await createImageBitmap(mapImage);
     podTexture = await createImageBitmap(podImage);
     droneTexture = await createImageBitmap(droneImage);
+
+    let treasurePodsRequest = await fetch("data/treasurePods.json");
+    treasurePods = await treasurePodsRequest.json();
+
+    let researchDronesRequest = await fetch("data/researchDrones.json");
+    researchDrones = await researchDronesRequest.json();
 
     requestAnimationFrame(render);
 }
@@ -268,7 +273,7 @@ canvas.addEventListener("wheel", function(event) {
     if (event.deltaY > 0) {
         camera.zoomOut(at);
     }
-});
+}, { passive: true });
 
 function getMarkerAtCursor(mousePosition) {
     var clickDistance = 50 / 2 / camera.zoom;

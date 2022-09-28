@@ -1,0 +1,135 @@
+[
+    {
+        "x": 5870,
+        "y": 2644,
+        "name": "Conservatory 1 - Conservatory",
+        "notes": "On the overpass towards the Gully",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024026967869243432/unknown.png"
+    },
+    {
+        "x": 7015,
+        "y": 3154,
+        "name": "Conservatory 2 - Archway",
+        "notes": "On the island on the east side of the Archway",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024027301547090060/unknown.png"
+    },
+    {
+        "x": 5875,
+        "y": 2447,
+        "name": "Conservatory 3 - Gully",
+        "notes": "On the cliff southwest of the Gully",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024027579046445166/unknown.png"
+    },
+    {
+        "x": 6571,
+        "y": 2142,
+        "name": "Conservatory 4 - Tidepools",
+        "notes": "On the northeast cliff of the Tidepools",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024027915899379862/unknown.png"
+    },
+    {
+        "x": 6155,
+        "y": 3589,
+        "name": "Conservatory 5 - The Den",
+        "notes": "On the mushrooms in the middle of The Den",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024028481455132713/unknown.png"
+    },
+    {
+        "x": 4835,
+        "y": 2916,
+        "name": "Rainbow Fields 1 - Expanse",
+        "notes": "By the lone tree west of the first field",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024028875770052698/unknown.png"
+    },
+    {
+        "x": 4705,
+        "y": 3258,
+        "name": "Rainbow Fields 2 - Bluff",
+        "notes": "To the left of the preinstalled Refinery Link",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024029014073024552/unknown.png"
+    },
+    {
+        "x": 2197,
+        "y": 1083,
+        "name": "Ember Valley 1 - Ocean Perch",
+        "notes": "To the right of the Tabby Gordo/North Portal",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024029626835681331/unknown.png"
+    },
+    {
+        "x": 2581,
+        "y": 2359,
+        "name": "Ember Valley 2 - Overlook",
+        "notes": "On the cliff looking towards the second field",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024029912635543693/unknown.png"
+    },
+    {
+        "x": 968,
+        "y": 2357,
+        "name": "Ember Valley 3 - Labyrinth Gate",
+        "notes": "In the room past the Boom Gordo",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024030291649642516/unknown.png"
+    },
+    {
+        "x": 1509,
+        "y": 2661,
+        "name": "Ember Valley 4 - Magma Fields Perch",
+        "notes": "On a pillar overlooking the Magma Fields",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024031564222431282/unknown.png"
+    },
+    {
+        "x": 2059,
+        "y": 2823,
+        "name": "Ember Valley 5 - Cave Hub",
+        "notes": "In the south of the Boom, Crystal, & Batty caves",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024031965571190824/unknown.png"
+    },
+    {
+        "x": 3057,
+        "y": 3022,
+        "name": "Ember Valley 6 - Ruined Overlook",
+        "notes": "On the middle Ruins island, east side",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024039203522236446/unknown.png"
+    },
+    {
+        "x": 4256,
+        "y": 4923,
+        "name": "Starlight Strand 1 - Field",
+        "notes": "Over the lake, south of the first Starlight Strand field",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024032941728342126/unknown.png"
+    },
+    {
+        "x": 4867,
+        "y": 4960,
+        "name": "Starlight Strand 2 - Waterfall",
+        "notes": "On the cliff to the left of the large waterfall",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024033161497296946/unknown.png"
+    },
+    {
+        "x": 4666,
+        "y": 5243,
+        "name": "Starlight Strand 3 - Split Tree",
+        "notes": "North of the Split Tree in the middle of the Starlight Strand",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024033456138756197/unknown.png"
+    },
+    {
+        "x": 4292,
+        "y": 5661,
+        "name": "Starlight Strand 4 - Mushroom Alley",
+        "notes": "On a large mushroom in the middle of the field",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024033671109414962/unknown.png"
+    },
+    {
+        "x": 4726,
+        "y": 6222,
+        "name": "Starlight Strand 5 - Labyrinth Gate",
+        "notes": "At the bottom of the Nectar Gordo's hole",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024034000790106194/unknown.png"
+    },
+    {
+        "x": 5331,
+        "y": 5489,
+        "name": "Starlight Strand 6 - Sloped Cliff",
+        "notes": "Along the path on the east side of the Starlight Strand",
+        "screenshot": "https://cdn.discordapp.com/attachments/1024026637941080094/1024042253238403193/unknown.png"
+    }
+]
